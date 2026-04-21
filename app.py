@@ -64,7 +64,7 @@ def index():
 def login():
     error = None
     if request.method == "POST":
-        if request.form.get("username") == "nirmal" and request.form.get("password") == "admin":
+        if request.form.get("username") == "admin" and request.form.get("password") == "admin":
             session["logged_in"] = True
             return redirect(url_for("index"))
         error = "Invalid credentials. Access denied."
