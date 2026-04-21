@@ -1,0 +1,11 @@
+Patient ID,Patient Name,Age,Gender,Blood Type,Medical Condition,Date of Admission,Discharge Date,Doctor,Hospital,Room Number,Admission Type,Medication,Treatment Notes
+P001,Arjun Nair,45,Male,O+,Hypertension,2026-01-10,2026-01-15,Dr. Meera Pillai,MedTrace Hospital Thrissur,101,Urgent,Amlodipine,"Patient admitted with BP 185/115. Started Amlodipine 5mg. BP stabilized after 4 days."
+P002,Divya Menon,32,Female,A+,Diabetes Type 2,2026-01-12,2026-01-18,Dr. Suresh Babu,KIMS Hospital Trivandrum,205,Elective,Metformin,"HbA1c at 8.5. Metformin dosage adjusted to 1000mg twice daily. Diet counseling provided."
+P003,Rajan Krishnan,67,Male,B+,Coronary Artery Disease,2026-01-14,2026-01-26,Dr. Anitha Rajan,Amrita Hospital Kochi,302,Emergency,Aspirin,"Emergency angioplasty performed. ECG showed ST elevation. Aspirin 75mg prescribed."
+P004,Smitha George,54,Female,AB-,Breast Cancer Stage 2,2026-01-18,2026-02-05,Dr. Thomas Varghese,Regional Cancer Centre,410,Urgent,Tamoxifen,"Chemotherapy cycle 2 initiated. Patient tolerating treatment. Follow-up in 3 weeks."
+P005,Unnikrishnan PM,71,Male,O-,COPD,2026-01-20,2026-01-28,Dr. Lakshmi Devi,Government Medical College,115,Emergency,Salbutamol,"Acute COPD exacerbation. Oxygen therapy given. Salbutamol nebulization every 4 hours."
+P006,Anjali Suresh,29,Female,A-,Appendicitis,2026-01-22,2026-01-25,Dr. Meera Pillai,MedTrace Hospital Thrissur,208,Emergency,Amoxicillin,"Laparoscopic appendectomy performed. Post-op antibiotics for 5 days. Recovered well."
+P007,Manoj Kumar,48,Male,B-,Kidney Stone,2026-01-25,2026-01-28,Dr. Suresh Babu,KIMS Hospital Trivandrum,112,Urgent,Ibuprofen,"Ureteroscopy performed. 9mm stone removed. Ibuprofen 400mg for pain management."
+P008,Rekha Vijayan,36,Female,O+,Asthma,2026-01-28,2026-01-31,Dr. Anitha Rajan,Amrita Hospital Kochi,220,Elective,Montelukast,"Routine asthma review. Peak flow improved. Montelukast added to inhaler regimen."
+P009,Santhosh Pillai,55,Male,A+,Type 1 Diabetes,2026-02-02,2026-02-05,Dr. Suresh Babu,KIMS Hospital Trivandrum,305,Urgent,Insulin,"Hypoglycemic episode. Insulin dosage adjusted. Continuous glucose monitoring advised."
+P010,Parvathy Nair,42,Female,AB+,Migraine,2026-02-05,2026-02-07,Dr. Lakshmi Devii,Government Medical College,118,Elective,Sumatriptan,"Chronic migraine. MRI normal. Sumatriptan prescribed for acute episodes."

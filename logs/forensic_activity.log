@@ -1,0 +1,163 @@
+2026-04-07 12:29:40,068 - INFO - *** FORENSIC SCAN INITIATED ***
+2026-04-07 12:29:40,069 - INFO - Case ID         : HC-2026-009
+2026-04-07 12:29:40,069 - INFO - Investigator    : Sreelakshmi
+2026-04-07 12:29:40,069 - INFO - System Name     : MedTrace Healthcare Cloud Storage System
+2026-04-07 12:29:40,069 - INFO - Scanning Path   : sample_healthcare_data
+2026-04-07 12:29:40,069 - INFO - Breach Date Set : 2026-02-01
+2026-04-07 12:29:40,071 - INFO - Evidence Collected : sample_healthcare_data\Billing\billing_invoices_2026.csv
+2026-04-07 12:29:40,071 - INFO - Evidence Collected : sample_healthcare_data\Billing\billing_payment_summary.txt
+2026-04-07 12:29:40,102 - INFO - Evidence Collected : sample_healthcare_data\EHR\ehr_case_summary_P001.txt
+2026-04-07 12:29:40,102 - INFO - Evidence Collected : sample_healthcare_data\EHR\ehr_patient_records.csv
+2026-04-07 12:29:40,103 - INFO - Evidence Collected : sample_healthcare_data\Lab_Reports\lab_report_P003_cardiac.txt
+2026-04-07 12:29:40,103 - INFO - Evidence Collected : sample_healthcare_data\Lab_Reports\lab_test_results_2026.csv
+2026-04-07 12:29:40,104 - INFO - Evidence Collected : sample_healthcare_data\Radiology\xray_scan_report_P003.txt
+2026-04-07 12:29:40,141 - INFO - Total Files Scanned : 7
+2026-04-07 12:29:40,141 - INFO - High Risk Files     : 7
+2026-04-07 12:29:40,141 - INFO - Low Risk Files      : 0
+2026-04-07 12:29:40,141 - INFO - *** EVIDENCE REPORT GENERATED SUCCESSFULLY ***
+2026-04-07 12:29:40,141 - INFO - *** FORENSIC INVESTIGATION COMPLETED ***
+2026-04-07 12:39:40,203 - INFO - *** FORENSIC SCAN INITIATED ***
+2026-04-07 12:39:40,204 - INFO - Case ID         : HC-2026-009
+2026-04-07 12:39:40,204 - INFO - Investigator    : Sreelakshmi
+2026-04-07 12:39:40,204 - INFO - System Name     : MedTrace Healthcare Cloud Storage System
+2026-04-07 12:39:40,204 - INFO - Scanning Path   : sample_healthcare_data
+2026-04-07 12:39:40,204 - INFO - Breach Date Set : 2026-02-01
+2026-04-07 12:39:40,205 - INFO - Evidence Collected : sample_healthcare_data\Billing\billing_invoices_2026.csv
+2026-04-07 12:39:40,205 - INFO - Evidence Collected : sample_healthcare_data\Billing\billing_payment_summary.txt
+2026-04-07 12:39:40,206 - INFO - Evidence Collected : sample_healthcare_data\EHR\ehr_case_summary_P001.txt
+2026-04-07 12:39:40,206 - INFO - Evidence Collected : sample_healthcare_data\EHR\ehr_patient_records.csv
+2026-04-07 12:39:40,207 - INFO - Evidence Collected : sample_healthcare_data\Lab_Reports\lab_report_P003_cardiac.txt
+2026-04-07 12:39:40,207 - INFO - Evidence Collected : sample_healthcare_data\Lab_Reports\lab_test_results_2026.csv
+2026-04-07 12:39:40,207 - INFO - Evidence Collected : sample_healthcare_data\Radiology\xray_scan_report_P003.txt
+2026-04-07 12:39:40,209 - INFO - Total Files Scanned : 7
+2026-04-07 12:39:40,209 - INFO - High Risk Files     : 7
+2026-04-07 12:39:40,210 - INFO - Low Risk Files      : 0
+2026-04-07 12:39:40,210 - INFO - *** EVIDENCE REPORT GENERATED SUCCESSFULLY ***
+2026-04-07 12:39:40,210 - INFO - *** FORENSIC INVESTIGATION COMPLETED ***
+2026-04-09 09:39:38,492 - INFO - *** FORENSIC SCAN INITIATED ***
+2026-04-09 09:39:38,522 - INFO - Case ID         : HC-2026-009
+2026-04-09 09:39:38,523 - INFO - Investigator    : Sreelakshmi
+2026-04-09 09:39:38,523 - INFO - System Name     : MedTrace Healthcare Cloud Storage System
+2026-04-09 09:39:38,523 - INFO - Scanning Path   : sample_healthcare_data
+2026-04-09 09:39:38,523 - INFO - Breach Date Set : 2026-02-01
+2026-04-09 09:39:38,525 - INFO - Evidence Collected : sample_healthcare_data\Billing\billing_invoices_2026.csv
+2026-04-09 09:39:38,525 - INFO - Evidence Collected : sample_healthcare_data\Billing\billing_payment_summary.txt
+2026-04-09 09:39:38,526 - INFO - Evidence Collected : sample_healthcare_data\EHR\ehr_case_summary_P001.txt
+2026-04-09 09:39:38,526 - INFO - Evidence Collected : sample_healthcare_data\EHR\ehr_patient_records.csv
+2026-04-09 09:39:38,527 - INFO - Evidence Collected : sample_healthcare_data\Lab_Reports\lab_report_P003_cardiac.txt
+2026-04-09 09:39:38,527 - INFO - Evidence Collected : sample_healthcare_data\Lab_Reports\lab_test_results_2026.csv
+2026-04-09 09:39:38,528 - INFO - Evidence Collected : sample_healthcare_data\Radiology\xray_scan_report_P003.txt
+2026-04-09 09:39:38,529 - INFO - Total Files Scanned : 7
+2026-04-09 09:39:38,529 - INFO - High Risk Files     : 7
+2026-04-09 09:39:38,529 - INFO - Low Risk Files      : 0
+2026-04-09 09:39:38,529 - INFO - *** EVIDENCE REPORT GENERATED SUCCESSFULLY ***
+2026-04-09 09:39:38,529 - INFO - *** FORENSIC INVESTIGATION COMPLETED ***
+2026-04-09 22:33:39,741 - INFO - *** FORENSIC SCAN INITIATED ***
+2026-04-09 22:33:39,741 - INFO - Case ID         : HC-2026-009
+2026-04-09 22:33:39,741 - INFO - Investigator    : Sreelakshmi
+2026-04-09 22:33:39,742 - INFO - System Name     : MedTrace Healthcare Cloud Storage System
+2026-04-09 22:33:39,742 - INFO - Scanning Path   : sample_healthcare_data
+2026-04-09 22:33:39,744 - INFO - Breach Date Set : 2026-02-01
+2026-04-09 22:33:39,746 - INFO - Evidence Collected : sample_healthcare_data\Billing\billing_invoices_2026.csv
+2026-04-09 22:33:39,746 - INFO - Evidence Collected : sample_healthcare_data\Billing\billing_payment_summary.txt
+2026-04-09 22:33:39,746 - INFO - Evidence Collected : sample_healthcare_data\EHR\ehr_case_summary_P001.txt
+2026-04-09 22:33:39,747 - INFO - Evidence Collected : sample_healthcare_data\EHR\ehr_patient_records.csv
+2026-04-09 22:33:39,747 - INFO - Evidence Collected : sample_healthcare_data\Lab_Reports\lab_report_P003_cardiac.txt
+2026-04-09 22:33:39,747 - INFO - Evidence Collected : sample_healthcare_data\Lab_Reports\lab_test_results_2026.csv
+2026-04-09 22:33:39,748 - INFO - Evidence Collected : sample_healthcare_data\Radiology\xray_scan_report_P003.txt
+2026-04-09 22:33:39,749 - INFO - Total Files Scanned : 7
+2026-04-09 22:33:39,749 - INFO - High Risk Files     : 7
+2026-04-09 22:33:39,749 - INFO - Low Risk Files      : 0
+2026-04-09 22:33:39,749 - INFO - *** EVIDENCE REPORT GENERATED SUCCESSFULLY ***
+2026-04-09 22:33:39,749 - INFO - *** FORENSIC INVESTIGATION COMPLETED ***
+2026-04-09 22:37:46,346 - INFO - *** FORENSIC SCAN INITIATED ***
+2026-04-09 22:37:46,346 - INFO - Case ID         : HC-2026-009
+2026-04-09 22:37:46,346 - INFO - Investigator    : Sreelakshmi
+2026-04-09 22:37:46,346 - INFO - System Name     : MedTrace Healthcare Cloud Storage System
+2026-04-09 22:37:46,346 - INFO - Scanning Path   : sample_healthcare_data
+2026-04-09 22:37:46,346 - INFO - Breach Date Set : 2026-03-02
+2026-04-09 22:37:46,350 - INFO - Evidence Collected : sample_healthcare_data\Billing\billing_invoices_2026.csv
+2026-04-09 22:37:46,350 - INFO - Evidence Collected : sample_healthcare_data\Billing\billing_payment_summary.txt
+2026-04-09 22:37:46,351 - INFO - Evidence Collected : sample_healthcare_data\EHR\ehr_case_summary_P001.txt
+2026-04-09 22:37:46,351 - INFO - Evidence Collected : sample_healthcare_data\EHR\ehr_patient_records.csv
+2026-04-09 22:37:46,351 - INFO - Evidence Collected : sample_healthcare_data\Lab_Reports\lab_report_P003_cardiac.txt
+2026-04-09 22:37:46,352 - INFO - Evidence Collected : sample_healthcare_data\Lab_Reports\lab_test_results_2026.csv
+2026-04-09 22:37:46,352 - INFO - Evidence Collected : sample_healthcare_data\Radiology\xray_scan_report_P003.txt
+2026-04-09 22:37:46,353 - INFO - Total Files Scanned : 7
+2026-04-09 22:37:46,354 - INFO - High Risk Files     : 7
+2026-04-09 22:37:46,354 - INFO - Low Risk Files      : 0
+2026-04-09 22:37:46,354 - INFO - *** EVIDENCE REPORT GENERATED SUCCESSFULLY ***
+2026-04-09 22:37:46,354 - INFO - *** FORENSIC INVESTIGATION COMPLETED ***
+2026-04-09 22:38:15,419 - INFO - *** FORENSIC SCAN INITIATED ***
+2026-04-09 22:38:15,419 - INFO - Case ID         : HC-2026-009
+2026-04-09 22:38:15,419 - INFO - Investigator    : Sreelakshmi
+2026-04-09 22:38:15,419 - INFO - System Name     : MedTrace Healthcare Cloud Storage System
+2026-04-09 22:38:15,419 - INFO - Scanning Path   : sample_healthcare_data
+2026-04-09 22:38:15,419 - INFO - Breach Date Set : 2026-04-08
+2026-04-09 22:38:15,420 - INFO - Evidence Collected : sample_healthcare_data\Billing\billing_invoices_2026.csv
+2026-04-09 22:38:15,421 - INFO - Evidence Collected : sample_healthcare_data\Billing\billing_payment_summary.txt
+2026-04-09 22:38:15,421 - INFO - Evidence Collected : sample_healthcare_data\EHR\ehr_case_summary_P001.txt
+2026-04-09 22:38:15,422 - INFO - Evidence Collected : sample_healthcare_data\EHR\ehr_patient_records.csv
+2026-04-09 22:38:15,422 - INFO - Evidence Collected : sample_healthcare_data\Lab_Reports\lab_report_P003_cardiac.txt
+2026-04-09 22:38:15,422 - INFO - Evidence Collected : sample_healthcare_data\Lab_Reports\lab_test_results_2026.csv
+2026-04-09 22:38:15,422 - INFO - Evidence Collected : sample_healthcare_data\Radiology\xray_scan_report_P003.txt
+2026-04-09 22:38:15,424 - INFO - Total Files Scanned : 7
+2026-04-09 22:38:15,424 - INFO - High Risk Files     : 7
+2026-04-09 22:38:15,424 - INFO - Low Risk Files      : 0
+2026-04-09 22:38:15,424 - INFO - *** EVIDENCE REPORT GENERATED SUCCESSFULLY ***
+2026-04-09 22:38:15,424 - INFO - *** FORENSIC INVESTIGATION COMPLETED ***
+2026-04-09 22:40:08,296 - INFO - *** FORENSIC SCAN INITIATED ***
+2026-04-09 22:40:08,296 - INFO - Case ID         : HC-2026-009
+2026-04-09 22:40:08,296 - INFO - Investigator    : Sreelakshmi
+2026-04-09 22:40:08,296 - INFO - System Name     : MedTrace Healthcare Cloud Storage System
+2026-04-09 22:40:08,296 - INFO - Scanning Path   : sample_healthcare_data
+2026-04-09 22:40:08,296 - INFO - Breach Date Set : 2026-02-03
+2026-04-09 22:40:08,297 - INFO - Evidence Collected : sample_healthcare_data\Billing\billing_invoices_2026.csv
+2026-04-09 22:40:08,298 - INFO - Evidence Collected : sample_healthcare_data\Billing\billing_payment_summary.txt
+2026-04-09 22:40:08,298 - INFO - Evidence Collected : sample_healthcare_data\EHR\ehr_case_summary_P001.txt
+2026-04-09 22:40:08,299 - INFO - Evidence Collected : sample_healthcare_data\EHR\ehr_patient_records.csv
+2026-04-09 22:40:08,299 - INFO - Evidence Collected : sample_healthcare_data\Lab_Reports\lab_report_P003_cardiac.txt
+2026-04-09 22:40:08,300 - INFO - Evidence Collected : sample_healthcare_data\Lab_Reports\lab_test_results_2026.csv
+2026-04-09 22:40:08,300 - INFO - Evidence Collected : sample_healthcare_data\Radiology\xray_scan_report_P003.txt
+2026-04-09 22:40:08,302 - INFO - Total Files Scanned : 7
+2026-04-09 22:40:08,302 - INFO - High Risk Files     : 7
+2026-04-09 22:40:08,302 - INFO - Low Risk Files      : 0
+2026-04-09 22:40:08,302 - INFO - *** EVIDENCE REPORT GENERATED SUCCESSFULLY ***
+2026-04-09 22:40:08,302 - INFO - *** FORENSIC INVESTIGATION COMPLETED ***
+2026-04-09 22:42:14,813 - INFO - *** FORENSIC SCAN INITIATED ***
+2026-04-09 22:42:14,813 - INFO - Case ID         : HC-2026-009
+2026-04-09 22:42:14,813 - INFO - Investigator    : Sreelakshmi
+2026-04-09 22:42:14,813 - INFO - System Name     : MedTrace Healthcare Cloud Storage System
+2026-04-09 22:42:14,813 - INFO - Scanning Path   : sample_healthcare_data
+2026-04-09 22:42:14,813 - INFO - Breach Date Set : 2026-04-08
+2026-04-09 22:42:14,814 - INFO - Evidence Collected : sample_healthcare_data\Billing\billing_invoices_2026.csv
+2026-04-09 22:42:14,815 - INFO - Evidence Collected : sample_healthcare_data\Billing\billing_payment_summary.txt
+2026-04-09 22:42:14,815 - INFO - Evidence Collected : sample_healthcare_data\EHR\ehr_case_summary_P001.txt
+2026-04-09 22:42:14,816 - INFO - Evidence Collected : sample_healthcare_data\EHR\ehr_patient_records.csv
+2026-04-09 22:42:14,816 - INFO - Evidence Collected : sample_healthcare_data\Lab_Reports\lab_report_P003_cardiac.txt
+2026-04-09 22:42:14,816 - INFO - Evidence Collected : sample_healthcare_data\Lab_Reports\lab_test_results_2026.csv
+2026-04-09 22:42:14,816 - INFO - Evidence Collected : sample_healthcare_data\Radiology\xray_scan_report_P003.txt
+2026-04-09 22:42:14,818 - INFO - Total Files Scanned : 7
+2026-04-09 22:42:14,818 - INFO - High Risk Files     : 7
+2026-04-09 22:42:14,818 - INFO - Low Risk Files      : 0
+2026-04-09 22:42:14,818 - INFO - *** EVIDENCE REPORT GENERATED SUCCESSFULLY ***
+2026-04-09 22:42:14,818 - INFO - *** FORENSIC INVESTIGATION COMPLETED ***
+2026-04-09 22:44:33,166 - ERROR - Invalid directory path provided by investigator.
+2026-04-09 22:44:45,179 - INFO - *** FORENSIC SCAN INITIATED ***
+2026-04-09 22:44:45,179 - INFO - Case ID         : HC-2026-009
+2026-04-09 22:44:45,179 - INFO - Investigator    : Sreelakshmi
+2026-04-09 22:44:45,179 - INFO - System Name     : MedTrace Healthcare Cloud Storage System
+2026-04-09 22:44:45,179 - INFO - Scanning Path   : sample_healthcare_data
+2026-04-09 22:44:45,179 - INFO - Breach Date Set : 2026-04-08
+2026-04-09 22:44:45,180 - INFO - Evidence Collected : sample_healthcare_data\Billing\billing_invoices_2026.csv
+2026-04-09 22:44:45,180 - INFO - Evidence Collected : sample_healthcare_data\Billing\billing_payment_summary.txt
+2026-04-09 22:44:45,181 - INFO - Evidence Collected : sample_healthcare_data\EHR\ehr_case_summary_P001.txt
+2026-04-09 22:44:45,181 - INFO - Evidence Collected : sample_healthcare_data\EHR\ehr_patient_records.csv
+2026-04-09 22:44:45,181 - INFO - Evidence Collected : sample_healthcare_data\Lab_Reports\lab_report_P003_cardiac.txt
+2026-04-09 22:44:45,182 - INFO - Evidence Collected : sample_healthcare_data\Lab_Reports\lab_test_results_2026.csv
+2026-04-09 22:44:45,182 - INFO - Evidence Collected : sample_healthcare_data\Radiology\xray_scan_report_P003.txt
+2026-04-09 22:44:45,183 - INFO - Total Files Scanned : 7
+2026-04-09 22:44:45,184 - INFO - High Risk Files     : 2
+2026-04-09 22:44:45,184 - INFO - Low Risk Files      : 5
+2026-04-09 22:44:45,184 - INFO - *** EVIDENCE REPORT GENERATED SUCCESSFULLY ***
+2026-04-09 22:44:45,184 - INFO - *** FORENSIC INVESTIGATION COMPLETED ***

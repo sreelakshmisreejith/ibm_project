@@ -1,0 +1,62 @@
+================================================
+LABORATORY INVESTIGATION REPORT
+================================================
+Report ID       : LR-2026-107
+Patient ID      : P003
+Patient Name    : Rajan Krishnan
+Age / Gender    : 67 / Male
+Doctor          : Dr. Anitha Rajan
+Hospital        : Amrita Hospital Kochi
+Test Date       : 2026-01-14
+Report Date     : 2026-01-15
+================================================
+
+CARDIAC ENZYME PANEL
+--------------------
+
+1. TROPONIN I
+   Result      : 3.1 ng/mL
+   Normal Range: < 0.04 ng/mL
+   Status      : *** CRITICALLY ABNORMAL ***
+   Remarks     : Significantly elevated Troponin I confirms
+                 acute myocardial infarction. Emergency
+                 angioplasty already initiated at Amrita Kochi.
+
+2. CK-MB (Creatine Kinase MB)
+   Result      : 52 U/L
+   Normal Range: 0 - 25 U/L
+   Status      : ABNORMAL
+   Remarks     : Elevated CK-MB supports MI diagnosis.
+
+3. BNP (Brain Natriuretic Peptide)
+   Result      : 910 pg/mL
+   Normal Range: < 100 pg/mL
+   Status      : CRITICALLY ABNORMAL
+   Remarks     : Severely elevated. Significant cardiac stress.
+
+COMPLETE BLOOD COUNT
+--------------------
+Hemoglobin      : 12.5 g/dL    (Normal: 13-17)     LOW
+WBC Count       : 13.8 x10^9/L (Normal: 4.5-11)    HIGH
+Platelets       : 205 x10^9/L  (Normal: 150-400)   Normal
+RBC Count       : 4.1 x10^6/uL (Normal: 4.5-5.9)  LOW
+
+LIPID PROFILE
+-------------
+Total Cholesterol : 258 mg/dL  (Normal: <200)      HIGH
+LDL Cholesterol   : 175 mg/dL  (Normal: <100)      HIGH
+HDL Cholesterol   : 30 mg/dL   (Normal: >40)       LOW
+Triglycerides     : 225 mg/dL  (Normal: <150)      HIGH
+
+CLINICAL INTERPRETATION
+------------------------
+Results confirm acute myocardial infarction. Emergency
+angioplasty performed at Amrita Hospital Kochi. Patient
+is under ICU monitoring. Statin therapy and anticoagulation
+treatment initiated immediately.
+
+Reported By     : Dr. Suja Mathew (Pathologist)
+Verified By     : Dr. Anitha Rajan (Cardiologist)
+================================================
+END OF REPORT - Amrita Hospital Kochi
+================================================

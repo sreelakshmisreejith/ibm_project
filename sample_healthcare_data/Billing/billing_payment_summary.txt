@@ -1,0 +1,55 @@
+================================================
+MONTHLY BILLING & PAYMENT SUMMARY REPORT
+================================================
+Report Period   : January - February 2026
+Generated On    : 2026-02-12
+Prepared By     : Accounts Department
+Hospital Group  : MedTrace & Affiliated Hospitals Kerala
+================================================
+
+REVENUE SUMMARY
+---------------
+Total Invoices Raised       : 10
+Total Billed Amount         : Rs. 4,82,900.00
+Total Insurance Covered     : Rs. 3,00,000.00
+Total Patient Due           : Rs. 1,05,900.00
+Total Amount Collected      : Rs. 56,300.00
+Total Pending Amount        : Rs. 30,600.00
+
+PAYMENT STATUS BREAKDOWN
+------------------------
+Paid            : 6 invoices   (Rs. 56,300.00)
+Pending         : 3 invoices   (Rs. 30,600.00)
+Partial Payment : 1 invoice    (Rs. 19,000.00)
+
+INSURANCE PROVIDER SUMMARY
+---------------------------
+Star Health Insurance       : 3 patients    Rs. 76,000.00 covered
+New India Assurance         : 2 patients    Rs. 48,000.00 covered
+United India Insurance      : 2 patients    Rs. 83,000.00 covered
+Oriental Insurance          : 2 patients    Rs. 75,000.00 covered
+Government Scheme           : 1 patient     Rs. 18,000.00 covered
+
+DEPARTMENT WISE BILLING
+------------------------
+Cardiology          : Rs. 1,11,500.00
+Oncology            : Rs. 74,000.00
+Surgery             : Rs. 51,000.00
+Endocrinology       : Rs. 50,700.00
+Urology             : Rs. 43,000.00
+Pulmonology         : Rs. 34,100.00
+Neurology           : Rs. 27,500.00
+
+OVERDUE ACCOUNTS (Action Required)
+------------------------------------
+Patient ID  Patient Name        Amount Due      Days Overdue
+P002        Divya Menon         Rs. 11,600.00   31 days
+P007        Manoj Kumar         Rs. 10,500.00   18 days
+P009        Santhosh Pillai     Rs. 8,500.00    10 days
+
+NOTE: Overdue accounts to be followed up immediately
+      by the billing department.
+
+================================================
+END OF REPORT - MedTrace Hospital Accounts Dept
+================================================

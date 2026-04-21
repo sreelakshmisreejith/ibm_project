@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEDTRACE — Cyber Forensics Command Center</title>
+  <meta name="description" content="MedTrace Healthcare Breach Console — real-time forensic investigation, threat detection, and evidence classification.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Backgrounds -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="grid-overlay"></div>
+  <div class="scan-line"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- ── TOPBAR ─────────────────────────────────────────────── -->
+  <header class="topbar" id="topbar">
+    <div class="topbar-left">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+      </div>
+      <div class="brand-info">
+        <div class="brand-name">MEDTRACE FORENSICS</div>
+        <div class="brand-sub">// HC-2026-009 · Cloud Forensics Command Center</div>
+      </div>
+    </div>
+
+    <nav class="nav-tabs-cyber" role="tablist">
+      <button class="nav-tab-cyber active" data-tab="command" role="tab" id="tab-command">
+        <span class="tab-icon">▣</span> COMMAND
+      </button>
+      <button class="nav-tab-cyber" data-tab="threats" role="tab" id="tab-threats">
+        <span class="tab-icon">◈</span> THREATS
+      </button>
+      <button class="nav-tab-cyber" data-tab="monitor" role="tab" id="tab-monitor">
+        <span class="tab-icon">⌬</span> MONITOR
+      </button>
+      <button class="nav-tab-cyber" data-tab="alerts" role="tab" id="tab-alerts">
+        <span class="tab-icon">⚡</span> ALERTS
+        <span class="alert-count-badge" id="alert-badge">0</span>
+      </button>
+      <button class="nav-tab-cyber" data-tab="control" role="tab" id="tab-control">
+        <span class="tab-icon">⊛</span> CONTROL
+      </button>
+    </nav>
+
+    <div class="topbar-right">
+      <div class="sys-metrics">
+        <div class="metric-item">
+          <span class="metric-label">STATUS</span>
+          <span class="metric-val online"><span class="pulse-dot"></span>ONLINE</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">TIME</span>
+          <span class="metric-val" id="live-clock">--:--:--</span>
+        </div>
+      </div>
+      <a href="{{ url_for('logout') }}" class="btn-logout" title="Terminate session">
+        <svg viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+        TERMINATE
+      </a>
+    </div>
+  </header>
+
+  <!-- ── MAIN CONTENT ──────────────────────────────────────── -->
+  <main class="cmd-main">
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!--   COMMAND CENTER TAB                                   -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <section class="tab-panel active" id="panel-command" role="tabpanel">
+
+      <!-- System Status Row -->
+      <div class="status-row">
+        <div class="status-card" id="sc-total">
+          <div class="sc-header">
+            <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.08 15.92 0 13.36 0c-1.47 0-2.76.68-3.6 1.74L9 3 8.24 1.74C7.4.68 6.11 0 4.64 0 2.08 0 0 2.08 0 4.64c0 .48.09.92.18 1.36H0v2h20V6zM4.64 4c-.88 0-1.6-.72-1.6-1.6 0-.88.72-1.6 1.6-1.6.52 0 .98.26 1.28.64L8 3.94C7.2 4.25 4.64 4 4.64 4zm8.72 0s-2.56.25-3.36-.06l2.08-2.9c.3-.38.76-.64 1.28-.64.88 0 1.6.72 1.6 1.6 0 .88-.72 1.6-1.6 1.6zM1 19h22v2c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-2zm0-13v10h22V6H1z"/></svg>
+            TOTAL FILES
+          </div>
+          <div class="sc-value" id="total-files">0</div>
+          <div class="sc-sub">Indexed artifacts</div>
+          <div class="sc-bar"><div class="sc-bar-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="status-card danger" id="sc-high">
+          <div class="sc-header">
+            <svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+            HIGH RISK
+          </div>
+          <div class="sc-value text-danger" id="high-risk">0</div>
+          <div class="sc-sub">Modified post-breach</div>
+          <div class="sc-bar danger"><div class="sc-bar-fill" id="high-bar-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="status-card success" id="sc-low">
+          <div class="sc-header">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            LOW RISK
+          </div>
+          <div class="sc-value text-success" id="low-risk">0</div>
+          <div class="sc-sub">Baseline timeline</div>
+          <div class="sc-bar success"><div class="sc-bar-fill" id="low-bar-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="status-card info" id="sc-scan">
+          <div class="sc-header">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            LAST SCAN
+          </div>
+          <div class="sc-value" id="last-scan">—</div>
+          <div class="sc-sub">Local workstation</div>
+          <div class="sc-bar info"><div class="sc-bar-fill" style="width:100%"></div></div>
+        </div>
+      </div>
+
+      <!-- Main layout: scan + live feed -->
+      <div class="cmd-grid">
+
+        <!-- Scan Workspace Panel -->
+        <div class="glass-panel scan-workspace">
+          <div class="panel-header">
+            <div class="panel-title">
+              <span class="panel-icon">◈</span>
+              FORENSIC WORKSPACE
+            </div>
+            <div class="scan-badge" id="scan-state-badge" data-state="idle">
+              <span class="badge-dot"></span>
+              <span class="badge-text">IDLE</span>
+            </div>
+          </div>
+
+          <div class="panel-body">
+            <!-- Scan Form -->
+            <div class="scan-section">
+              <label class="cyber-label">// Target Evidence Directory</label>
+              <form id="scan-form" class="scan-form-row">
+                <div class="scan-input-wrap">
+                  <span class="scan-input-icon">
+                    <svg viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
+                  </span>
+                  <input id="directory-path" class="cyber-input-main" type="text"
+                    value="sample_healthcare_data"
+                    placeholder="e.g. sample_healthcare_data or C:\evidence\..."
+                    autocomplete="off" spellcheck="false">
+                </div>
+                <button id="scan-button" class="btn-scan" type="submit">
+                  <span class="btn-scan-icon">▶</span>
+                  <span class="btn-scan-text">INITIATE SCAN</span>
+                </button>
+              </form>
+
+              <!-- Progress Bar -->
+              <div class="scan-progress-wrap" id="scan-progress-wrap" style="display:none">
+                <div class="scan-progress-bar">
+                  <div class="scan-progress-fill" id="scan-progress-fill"></div>
+                </div>
+                <div class="scan-progress-label" id="scan-progress-label">Scanning...</div>
+              </div>
+
+              <div class="status-bar-inline" id="scan-status" data-tone="idle">
+                <span class="status-dot-inline"></span>
+                <span id="scan-status-text">Ready — enter a directory path and initiate scan.</span>
+              </div>
+            </div>
+
+            <!-- Case Metadata -->
+            <div class="case-meta-grid">
+              <div class="meta-block">
+                <div class="meta-label">// CASE ID</div>
+                <div class="meta-value mono" id="meta-case">HC-2026-009</div>
+              </div>
+              <div class="meta-block">
+                <div class="meta-label">// INVESTIGATOR</div>
+                <div class="meta-value" id="meta-investigator">Sreelakshmi</div>
+              </div>
+              <div class="meta-block">
+                <div class="meta-label">// BREACH DATE</div>
+                <div class="meta-value mono" id="meta-breach">Apr 8, 2026</div>
+              </div>
+              <div class="meta-block wide">
+                <div class="meta-label">// TARGET SYSTEM</div>
+                <div class="meta-value small" id="meta-system">MedTrace Healthcare Cloud Storage System</div>
+              </div>
+            </div>
+
+            <!-- Export Button -->
+            <div class="export-row">
+              <a id="download-link" class="btn-export" href="/reports/evidence_report.csv">
+                <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                EXPORT EVIDENCE REPORT
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Activity Feed -->
+        <div class="glass-panel activity-feed">
+          <div class="panel-header">
+            <div class="panel-title">
+              <span class="panel-icon">⟳</span>
+              LIVE ACTIVITY FEED
+            </div>
+            <div class="feed-controls">
+              <span class="feed-live-indicator"><span class="live-dot"></span>LIVE</span>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="activity-stream" id="activity-stream">
+              <div class="activity-placeholder">
+                <div class="ap-icon">◎</div>
+                <div>Awaiting scan initiation...</div>
+                <div class="ap-sub">System nominal — no active threats detected</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /command -->
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!--   THREATS VISUALIZER TAB                              -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <section class="tab-panel" id="panel-threats" role="tabpanel">
+      <div class="threats-grid">
+
+        <!-- Neon donut chart -->
+        <div class="glass-panel">
+          <div class="panel-header">
+            <div class="panel-title"><span class="panel-icon">◕</span> RISK DISTRIBUTION</div>
+            <div class="panel-badge cyan">LIVE</div>
+          </div>
+          <div class="panel-body chart-container-wrap">
+            <div class="chart-wrap">
+              <canvas id="risk-chart" aria-label="Risk distribution chart"></canvas>
+              <div class="chart-center-label" id="chart-center">
+                <div class="chart-center-val" id="chart-pct">0%</div>
+                <div class="chart-center-sub">HIGH RISK</div>
+              </div>
+            </div>
+            <div class="chart-legend" id="chart-legend">
+              <div class="legend-item"><span class="legend-dot danger"></span><span>High Risk</span><span class="legend-val" id="leg-high">0</span></div>
+              <div class="legend-item"><span class="legend-dot success"></span><span>Low Risk</span><span class="legend-val" id="leg-low">0</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Threat nodes -->
+        <div class="glass-panel">
+          <div class="panel-header">
+            <div class="panel-title"><span class="panel-icon">⬡</span> THREAT NODES</div>
+            <div class="panel-badge orange">DYNAMIC</div>
+          </div>
+          <div class="panel-body">
+            <canvas id="threat-nodes-canvas" width="400" height="280"></canvas>
+          </div>
+        </div>
+
+        <!-- Category breakdown bar chart -->
+        <div class="glass-panel full-width">
+          <div class="panel-header">
+            <div class="panel-title"><span class="panel-icon">▥</span> CATEGORY BREAKDOWN</div>
+            <div class="panel-badge green">ANALYSIS</div>
+          </div>
+          <div class="panel-body">
+            <canvas id="category-chart" aria-label="Category breakdown chart" height="100"></canvas>
+          </div>
+        </div>
+
+        <!-- Evidence table -->
+        <div class="glass-panel full-width">
+          <div class="panel-header">
+            <div class="panel-title"><span class="panel-icon">≣</span> EVIDENCE RECORDS</div>
+            <div class="evidence-controls">
+              <div class="search-wrap">
+                <span class="search-icon">
+                  <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                </span>
+                <input id="search-input" class="search-input" type="search" placeholder="Search files, categories...">
+              </div>
+              <select id="risk-filter" class="cyber-select">
+                <option value="all">ALL LEVELS</option>
+                <option value="High">⚠ HIGH RISK</option>
+                <option value="Low">✓ LOW RISK</option>
+              </select>
+            </div>
+          </div>
+          <div class="panel-body no-pad">
+            <div class="evidence-summary-row" id="evidence-summary">
+              <span class="ev-chip">FILES: <strong id="chip-total">0</strong></span>
+              <span class="ev-chip danger">HIGH: <strong id="chip-high">0</strong></span>
+              <span class="ev-chip success">LOW: <strong id="chip-low">0</strong></span>
+            </div>
+            <div class="cyber-table-wrap">
+              <table class="cyber-table" id="cyber-table">
+                <thead>
+                  <tr>
+                    <th>FILE NAME</th>
+                    <th>CATEGORY</th>
+                    <th>RISK LEVEL</th>
+                    <th>STATUS</th>
+                    <th>MODIFIED</th>
+                    <th>SHA-256</th>
+                  </tr>
+                </thead>
+                <tbody id="records-body">
+                  <tr class="empty-row">
+                    <td colspan="6">
+                      <div class="empty-state">
+                        <div class="empty-icon">◎</div>
+                        <div>No evidence records loaded</div>
+                        <div class="empty-sub">Initiate a scan from the Command Center</div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /threats -->
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!--   LIVE MONITOR TAB                                     -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <section class="tab-panel" id="panel-monitor" role="tabpanel">
+      <div class="monitor-layout">
+        <div class="glass-panel terminal-panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <span class="panel-icon">$</span>
+              SYSTEM TERMINAL — LIVE STREAM
+            </div>
+            <div class="terminal-controls">
+              <span class="term-btn red"></span>
+              <span class="term-btn orange"></span>
+              <span class="term-btn green"></span>
+              <button class="btn-clear-logs" id="clear-logs-btn">CLEAR</button>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="terminal-header-bar">
+              <span>medtrace-forensics@secure-node:~$</span>
+              <span class="terminal-live-badge"><span class="live-dot"></span> STREAMING</span>
+            </div>
+            <div class="terminal-body" id="log-console" role="log" aria-live="polite">
+              <div class="term-line"><span class="term-prompt">▶</span><span class="term-text">MedTrace Forensics System v2.0.1 — Terminal Active</span></div>
+              <div class="term-line info"><span class="term-prompt">◈</span><span class="term-text">Awaiting forensic scan initiation...</span></div>
+              <div class="term-line blink-cursor"><span class="term-cursor">█</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="monitor-sidebar">
+          <div class="glass-panel system-status-panel">
+            <div class="panel-header">
+              <div class="panel-title"><span class="panel-icon">◉</span> SYSTEM STATUS</div>
+            </div>
+            <div class="panel-body">
+              <div class="sys-status-item">
+                <span class="sys-label">SCAN ENGINE</span>
+                <span class="sys-val online">● ONLINE</span>
+              </div>
+              <div class="sys-status-item">
+                <span class="sys-label">HASH VERIFY</span>
+                <span class="sys-val online">● ACTIVE</span>
+              </div>
+              <div class="sys-status-item">
+                <span class="sys-label">REPORT GEN</span>
+                <span class="sys-val online">● READY</span>
+              </div>
+              <div class="sys-status-item">
+                <span class="sys-label">THREAT INTEL</span>
+                <span class="sys-val warning">● STANDBY</span>
+              </div>
+              <div class="sys-status-item">
+                <span class="sys-label">SESSION</span>
+                <span class="sys-val online">● SECURED</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel quick-stats-panel">
+            <div class="panel-header">
+              <div class="panel-title"><span class="panel-icon">▧</span> QUICK STATS</div>
+            </div>
+            <div class="panel-body">
+              <div class="qs-item">
+                <span class="qs-label">Total Scanned</span>
+                <span class="qs-val" id="qs-total">0</span>
+              </div>
+              <div class="qs-item">
+                <span class="qs-label">High Risk</span>
+                <span class="qs-val danger" id="qs-high">0</span>
+              </div>
+              <div class="qs-item">
+                <span class="qs-label">Low Risk</span>
+                <span class="qs-val success" id="qs-low">0</span>
+              </div>
+              <div class="qs-item">
+                <span class="qs-label">Last Updated</span>
+                <span class="qs-val" id="qs-time">—</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /monitor -->
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!--   ALERTS TAB                                           -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <section class="tab-panel" id="panel-alerts" role="tabpanel">
+      <div class="alerts-layout">
+        <div class="alerts-header-bar">
+          <div class="ah-title">
+            <span class="panel-icon">⚡</span>
+            ALERT ZONE — ACTIVE THREATS
+          </div>
+          <div class="ah-meta" id="ah-meta">No active alerts</div>
+        </div>
+        <div class="alerts-grid" id="alerts-grid">
+          <div class="alert-placeholder">
+            <div class="ap-icon">◎</div>
+            <div>Alert Zone Clear</div>
+            <div class="ap-sub">Run a scan to detect and classify threats</div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /alerts -->
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!--   CONTROL PANEL TAB                                    -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <section class="tab-panel" id="panel-control" role="tabpanel">
+      <div class="control-grid">
+
+        <div class="glass-panel">
+          <div class="panel-header">
+            <div class="panel-title"><span class="panel-icon">⊛</span> DETECTION SYSTEMS</div>
+          </div>
+          <div class="panel-body">
+            <div class="toggle-group">
+              <div class="toggle-item">
+                <div class="toggle-info">
+                  <div class="toggle-name">Hash Verification Engine</div>
+                  <div class="toggle-desc">SHA-256 fingerprint validation for all artifacts</div>
+                </div>
+                <label class="cyber-toggle">
+                  <input type="checkbox" checked id="tog-hash">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="toggle-item">
+                <div class="toggle-info">
+                  <div class="toggle-name">Risk Classification Module</div>
+                  <div class="toggle-desc">4-tier risk scoring for breach timeline analysis</div>
+                </div>
+                <label class="cyber-toggle">
+                  <input type="checkbox" checked id="tog-risk">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="toggle-item">
+                <div class="toggle-info">
+                  <div class="toggle-name">Metadata Extraction</div>
+                  <div class="toggle-desc">File creation, modification, and access timestamps</div>
+                </div>
+                <label class="cyber-toggle">
+                  <input type="checkbox" checked id="tog-meta">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="toggle-item">
+                <div class="toggle-info">
+                  <div class="toggle-name">Auto-Report Generation</div>
+                  <div class="toggle-desc">Automatic CSV evidence report on scan completion</div>
+                </div>
+                <label class="cyber-toggle">
+                  <input type="checkbox" checked id="tog-report">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="toggle-item">
+                <div class="toggle-info">
+                  <div class="toggle-name">Live Alert Streaming</div>
+                  <div class="toggle-desc">Real-time high-risk alert notifications</div>
+                </div>
+                <label class="cyber-toggle">
+                  <input type="checkbox" checked id="tog-alerts">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="toggle-item">
+                <div class="toggle-info">
+                  <div class="toggle-name">Deep Scan Mode</div>
+                  <div class="toggle-desc">Extended analysis including subdirectories</div>
+                </div>
+                <label class="cyber-toggle">
+                  <input type="checkbox" id="tog-deep">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-panel">
+          <div class="panel-header">
+            <div class="panel-title"><span class="panel-icon">◈</span> CASE CONFIGURATION</div>
+          </div>
+          <div class="panel-body">
+            <div class="config-grid">
+              <div class="config-field">
+                <label class="cyber-label">Case ID</label>
+                <input type="text" class="cyber-input-sm" value="HC-2026-009" readonly>
+              </div>
+              <div class="config-field">
+                <label class="cyber-label">Investigator</label>
+                <input type="text" class="cyber-input-sm" value="Sreelakshmi" readonly>
+              </div>
+              <div class="config-field">
+                <label class="cyber-label">System</label>
+                <input type="text" class="cyber-input-sm" value="MedTrace Healthcare Cloud" readonly>
+              </div>
+              <div class="config-field">
+                <label class="cyber-label">Breach Date</label>
+                <input type="text" class="cyber-input-sm" value="Apr 8, 2026" readonly>
+              </div>
+            </div>
+            <div class="config-actions">
+              <a href="/reports/evidence_report.csv" class="btn-config-action">
+                <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                DOWNLOAD REPORT
+              </a>
+              <button class="btn-config-action danger" onclick="window.location='{{ url_for('logout') }}'">
+                <svg viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+                TERMINATE SESSION
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-panel full-width">
+          <div class="panel-header">
+            <div class="panel-title"><span class="panel-icon">▣</span> SYSTEM DIAGNOSTICS</div>
+          </div>
+          <div class="panel-body">
+            <div class="diag-grid">
+              <div class="diag-item">
+                <div class="diag-label">SCAN ENGINE</div>
+                <div class="diag-bar-wrap">
+                  <div class="diag-bar"><div class="diag-fill" style="width:92%"></div></div>
+                  <span class="diag-pct">92%</span>
+                </div>
+              </div>
+              <div class="diag-item">
+                <div class="diag-label">HASH ENGINE</div>
+                <div class="diag-bar-wrap">
+                  <div class="diag-bar"><div class="diag-fill success" style="width:100%"></div></div>
+                  <span class="diag-pct">100%</span>
+                </div>
+              </div>
+              <div class="diag-item">
+                <div class="diag-label">REPORT MODULE</div>
+                <div class="diag-bar-wrap">
+                  <div class="diag-bar"><div class="diag-fill" style="width:85%"></div></div>
+                  <span class="diag-pct">85%</span>
+                </div>
+              </div>
+              <div class="diag-item">
+                <div class="diag-label">THREAT INTEL</div>
+                <div class="diag-bar-wrap">
+                  <div class="diag-bar"><div class="diag-fill warning" style="width:40%"></div></div>
+                  <span class="diag-pct">40%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /control -->
+
+  </main>
+
+  <!-- ── BOTTOM STATUS BAR ────────────────────────────────── -->
+  <footer class="status-footer">
+    <div class="sf-left">
+      <span class="sf-dot"></span>
+      <span>MEDTRACE FORENSICS v2.0.1</span>
+      <span class="sf-sep">|</span>
+      <span>CASE: HC-2026-009</span>
+      <span class="sf-sep">|</span>
+      <span>INVESTIGATOR: Sreelakshmi</span>
+    </div>
+    <div class="sf-right">
+      <span id="sf-scan-state">IDLE</span>
+      <span class="sf-sep">|</span>
+      <span id="sf-clock">--:--:-- UTC</span>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

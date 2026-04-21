@@ -1,0 +1,16 @@
+Lab Report ID,Patient ID,Patient Name,Age,Gender,Test Date,Report Date,Doctor,Hospital,Test Name,Result Value,Unit,Normal Range,Status,Remarks
+LR-2026-101,P001,Arjun Nair,45,Male,2026-01-10,2026-01-11,Dr. Meera Pillai,MedTrace Hospital Thrissur,Complete Blood Count,13.8,g/dL,13.0-17.0,Normal,Hemoglobin within normal range
+LR-2026-102,P001,Arjun Nair,45,Male,2026-01-10,2026-01-11,Dr. Meera Pillai,MedTrace Hospital Thrissur,Blood Pressure,185/115,mmHg,120/80,Abnormal,Stage 2 Hypertension - Immediate treatment required
+LR-2026-103,P001,Arjun Nair,45,Male,2026-01-10,2026-01-11,Dr. Meera Pillai,MedTrace Hospital Thrissur,Lipid Profile LDL,152,mg/dL,<100,Abnormal,High LDL - Statin therapy recommended
+LR-2026-104,P002,Divya Menon,32,Female,2026-01-12,2026-01-13,Dr. Suresh Babu,KIMS Hospital Trivandrum,HbA1c,8.5,%,<7.0,Abnormal,Poor glycemic control - Medication adjustment needed
+LR-2026-105,P002,Divya Menon,32,Female,2026-01-12,2026-01-13,Dr. Suresh Babu,KIMS Hospital Trivandrum,Fasting Blood Glucose,192,mg/dL,70-100,Abnormal,Elevated fasting glucose - Diabetes management required
+LR-2026-106,P003,Rajan Krishnan,67,Male,2026-01-14,2026-01-14,Dr. Anitha Rajan,Amrita Hospital Kochi,ECG,ST Elevation,N/A,Normal Sinus Rhythm,Abnormal,STEMI detected - Emergency angioplasty required
+LR-2026-107,P003,Rajan Krishnan,67,Male,2026-01-14,2026-01-15,Dr. Anitha Rajan,Amrita Hospital Kochi,Troponin I,3.1,ng/mL,<0.04,Abnormal,Elevated Troponin - Confirms myocardial infarction
+LR-2026-108,P004,Smitha George,54,Female,2026-01-18,2026-01-19,Dr. Thomas Varghese,Regional Cancer Centre,CA 125 Tumor Marker,72,U/mL,<35,Abnormal,Elevated CA 125 - Monitor during chemotherapy
+LR-2026-109,P005,Unnikrishnan PM,71,Male,2026-01-20,2026-01-20,Dr. Lakshmi Devi,Government Medical College,Spirometry FEV1,45,%,>80,Abnormal,Severe airflow obstruction - COPD Stage 3
+LR-2026-110,P005,Unnikrishnan PM,71,Male,2026-01-20,2026-01-21,Dr. Lakshmi Devi,Government Medical College,Arterial Blood Gas pH,7.30,pH,7.35-7.45,Abnormal,Mild respiratory acidosis - Oxygen therapy needed
+LR-2026-111,P006,Anjali Suresh,29,Female,2026-01-22,2026-01-22,Dr. Meera Pillai,MedTrace Hospital Thrissur,WBC Count,15.2,x10^9/L,4.5-11.0,Abnormal,Elevated WBC - Confirms infection and appendicitis
+LR-2026-112,P007,Manoj Kumar,48,Male,2026-02-01,2026-02-01,Dr. Suresh Babu,KIMS Hospital Trivandrum,Urine Analysis,Hematuria,N/A,No blood,Abnormal,Blood in urine - Confirms kidney stone presence
+LR-2026-113,P008,Rekha Vijayan,36,Female,2026-02-03,2026-02-04,Dr. Anitha Rajan,Amrita Hospital Kochi,Peak Flow Rate,365,L/min,400-600,Abnormal,Below normal - Asthma not fully controlled
+LR-2026-114,P009,Santhosh Pillai,55,Male,2026-02-05,2026-02-05,Dr. Suresh Babu,KIMS Hospital Trivandrum,Blood Glucose Random,40,mg/dL,70-140,Abnormal,Hypoglycemia - Immediate glucose intervention needed
+LR-2026-115,P010,Parvathy Nair,42,Female,2026-02-07,2026-02-08,Dr. Lakshmi Devii,Government Medical College,MRI Brain,No abnormality,N/A,No abnormality,Normal,MRI normal - Migraine diagnosis confirmed clinically

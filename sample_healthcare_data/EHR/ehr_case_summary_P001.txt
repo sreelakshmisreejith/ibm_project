@@ -1,0 +1,64 @@
+========================================
+ELECTRONIC HEALTH RECORD - CASE SUMMARY
+========================================
+Case Reference  : EHR-2026-0031
+Date Created    : 2026-01-10
+Last Updated    : 2026-01-15
+Prepared By     : Dr. Meera Pillai
+Hospital        : MedTrace Hospital Thrissur
+========================================
+
+PATIENT INFORMATION
+-------------------
+Name            : Arjun Nair
+Patient ID      : P001
+Date of Birth   : 1981-06-14
+Age             : 45
+Gender          : Male
+Blood Type      : O+
+Contact         : +91-9876543210
+Address         : Thrissur, Kerala
+Emergency Contact: Priya Nair (Wife) - +91-9876543211
+
+ADMISSION DETAILS
+-----------------
+Admission Date  : 2026-01-10
+Discharge Date  : 2026-01-15
+Room Number     : 101
+Admission Type  : Urgent
+Admitting Doctor: Dr. Meera Pillai
+
+DIAGNOSIS
+---------
+Primary         : Hypertension Stage 2
+Secondary       : Obesity (BMI 31.8)
+BP on Admission : 185/115 mmHg
+Heart Rate      : 94 bpm
+Temperature     : 98.4 F
+SpO2            : 97%
+
+TREATMENT PLAN
+--------------
+1. Amlodipine 5mg - Once daily (Morning)
+2. Low sodium diet strictly followed
+3. BP monitoring every 6 hours
+4. Cardiology review after discharge
+
+PROGRESS NOTES
+--------------
+Day 1 (2026-01-10): BP 185/115. Started Amlodipine. Strict bed rest.
+Day 2 (2026-01-11): BP 170/108. Slight improvement. Diet chart given.
+Day 3 (2026-01-12): BP 158/98. Improvement noted.
+Day 4 (2026-01-13): BP 145/92. Continuing medication.
+Day 5 (2026-01-14): BP 135/88. Significant improvement.
+Day 6 (2026-01-15): BP 130/84. Stable. Discharged successfully.
+
+DISCHARGE SUMMARY
+-----------------
+Patient discharged in stable condition. Advised to continue
+Amlodipine 5mg daily. Follow-up: 2026-01-29 at MedTrace Thrissur.
+Lifestyle modification and salt restriction counseling given.
+
+========================================
+END OF RECORD - MedTrace Hospital Thrissur
+========================================
