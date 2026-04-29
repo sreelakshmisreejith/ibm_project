@@ -10,7 +10,7 @@ Hospital Group  : MedTrace & Affiliated Hospitals Kerala
 REVENUE SUMMARY
 ---------------
 Total Invoices Raised       : 10
-Total Billed Amount         : Rs. 4,82,900.00
+Total Billed Amount         : Rs. 4,82,900000.00
 Total Insurance Covered     : Rs. 3,00,000.00
 Total Patient Due           : Rs. 1,05,900.00
 Total Amount Collected      : Rs. 56,300.00
