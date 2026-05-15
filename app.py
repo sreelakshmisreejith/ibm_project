@@ -1,3 +1,4 @@
+import json
 from datetime import datetime
 from pathlib import Path
 
@@ -16,6 +17,7 @@ CASE_ID       = "HC-2026-009"
 INVESTIGATOR  = "Sreelakshmi"
 SYSTEM_NAME   = "MedTrace Healthcare Cloud Storage System"
 BREACH_DATE   = datetime(2026, 4, 8)
+USERS_DB_PATH = BASE_DIR / "users.json"
 
 # ── App setup ────────────────────────────────────────────────
 app = Flask(__name__, template_folder="templates", static_folder="static")
@@ -25,6 +27,16 @@ latest_scan_result = None
 
 
 # ── Helpers ──────────────────────────────────────────────────
+def load_users():
+    if USERS_DB_PATH.exists():
+        with open(USERS_DB_PATH, "r") as f:
+            return json.load(f)
+    return {"admin": "admin"}
+
+def save_users(users):
+    with open(USERS_DB_PATH, "w") as f:
+        json.dump(users, f)
+
 def resolve_path(raw: str) -> Path:
     p = Path(raw).expanduser()
     if not p.is_absolute():
@@ -64,11 +76,40 @@ def index():
 def login():
     error = None
     if request.method == "POST":
-        if request.form.get("username") == "admin" and request.form.get("password") == "admin":
+        users = load_users()
+        username = request.form.get("username")
+        password = request.form.get("password")
+        if username in users and users[username] == password:
             session["logged_in"] = True
             return redirect(url_for("index"))
-        error = "Invalid credentials. Access denied."
+        error = "Invalid username or password. Access denied."
     return render_template("login.html", error=error)
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    error = None
+    success = None
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+        confirm_password = request.form.get("confirm_password")
+
+        if not username or not password:
+            error = "Username and Password are required."
+        elif password != confirm_password:
+            error = "Passwords do not match."
+        else:
+            users = load_users()
+            if username in users:
+                error = "Username already exists."
+            else:
+                users[username] = password
+                save_users(users)
+                success = "Registered successfully. You can now login."
+            
+    return render_template("register.html", error=error, success=success)
+
 
 
 @app.route("/logout")
